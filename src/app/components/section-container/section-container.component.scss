@@ -1,0 +1,13 @@
+div#shell {
+    display: flex;
+    outline: 5px solid black;
+
+    div.wrapper {
+        display: inherit;
+
+        &#blurbWrapper {
+            display: inherit;
+            flex-direction: column; // make blurb items flow vertically
+        }
+    }
+}

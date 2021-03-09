@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TitleHeaderComponent } from './components/title-header/title-header.component';
+import { SectionContainerComponent } from './components/section-container/section-container.component';
+import { SectionBlurbComponent } from './components/section-blurb/section-blurb.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleHeaderComponent,
+    SectionContainerComponent,
+    SectionBlurbComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
