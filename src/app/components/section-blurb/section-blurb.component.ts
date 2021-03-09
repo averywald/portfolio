@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../services/data.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { IBlurb } from "../../models/IBlurb";
 
 @Component({
   selector: 'app-section-blurb',
   templateUrl: './section-blurb.component.html',
   styleUrls: ['./section-blurb.component.scss']
-  // providers: [ DataService ]
 })
 export class SectionBlurbComponent implements OnInit {
 
-  message?: string;
+  @Input('blurb-data') data: IBlurb;
 
-  constructor(public ds: DataService) {
-    this.message = this.ds.getGreeting();
-  }
+  title: string;
+  date?: string;
+  items: [string];
+
+  constructor() {}
 
   ngOnInit(): void {
-    
+    this.title = this.data.title;
+    this.date = this.data.date;
+    this.items = this.data.items;
   }
 
 }

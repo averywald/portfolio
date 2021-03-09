@@ -1,0 +1,23 @@
+{
+    "blurbs": [
+        {
+            "title": "personal portfolio",
+            "date": "august 2020 to present",
+            "items": [
+                "hardened cloud server security",
+                "set up web server",
+                "built a super cool portfolio web app",
+                "made hella cash"
+            ]
+        },
+        {
+            "title": "personal portfolio",
+            "items": [
+                "hardened cloud server security",
+                "set up web server",
+                "built a super cool portfolio web app",
+                "made hella cash"
+            ]
+        }
+    ]
+}

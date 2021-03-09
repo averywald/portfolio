@@ -1,1 +1,5 @@
-<p> {{ message }} </p>
+<h4> {{ title }} </h4>
+<p *ngIf="date"> {{ date }} </p>
+<ul *ngFor="let i of items;">
+    <li> {{ i }} </li>    
+</ul>
