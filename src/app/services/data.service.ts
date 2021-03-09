@@ -1,19 +1,23 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { Observable } from "rxjs";
+
+import { IBlurb } from '../models/IBlurb';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  greeting: string;
+  constructor(private hc: HttpClient) {}
 
-  // should have a data model for certain data it is delivering
-  constructor() {
-    this.greeting = "hello from the service";
+  private fetch<T>(path: string, headers?: HttpHeaders): Observable<T> {
+    return this.hc.get(path) as Observable<T>; // return the json data
   }
 
-  getGreeting(): string {
-    return this.greeting;
+  public getSectionBlurbs(): Observable<[IBlurb]> {
+    // retreive data from the API
+    return this.fetch<[IBlurb]>("../../assets/testBlurbs.json");
   }
 
 }

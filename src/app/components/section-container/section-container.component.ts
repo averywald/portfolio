@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IBlurb } from 'src/app/models/IBlurb';
+
+import { DataService } from "../../services/data.service";
 
 @Component({
   selector: 'app-section-container',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionContainerComponent implements OnInit {
 
-  constructor() { }
+  public blurbs: [IBlurb];
+
+  constructor(private ds: DataService) { }
 
   ngOnInit(): void {
+    this.ds.getSectionBlurbs().subscribe(res => this.blurbs = res["blurbs"] );
   }
 
 }
