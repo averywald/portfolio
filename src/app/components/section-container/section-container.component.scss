@@ -1,9 +1,12 @@
 div#shell {
     display: flex;
+    margin: 2vw;
+    padding: 2vw;
     outline: 5px solid black;
 
     div.wrapper {
         display: inherit;
+        padding: inherit;
 
         &#blurbWrapper {
             display: inherit;

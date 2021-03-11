@@ -4,7 +4,6 @@
 
 <app-title-header></app-title-header>
 
-<!-- can have these in an ng-for -->
-<app-section-container></app-section-container>
+<app-section-container *ngFor="let s of sections;" [section-id]="s"></app-section-container>
 
 <router-outlet></router-outlet> 
