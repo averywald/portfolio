@@ -1,6 +1,7 @@
 {
     "blurbs": [
         {
+            "sectionId": "xxysh3",
             "title": "personal portfolio",
             "date": "august 2020 to present",
             "items": [
@@ -11,6 +12,7 @@
             ]
         },
         {
+            "sectionId": "hefwoi",
             "title": "personal portfolio",
             "items": [
                 "hardened cloud server security",
