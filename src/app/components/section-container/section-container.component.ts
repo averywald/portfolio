@@ -16,7 +16,7 @@ export class SectionContainerComponent implements OnInit {
   public blurbs: [IBlurb];
   public title: string;
 
-  private id: string;
+  public id: string;
 
   constructor(private ds: DataService) {}
 
