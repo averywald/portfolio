@@ -17,7 +17,7 @@ export class DataService {
   }
 
   public getSections(): Observable<[ISection]> {
-    return this.fetch<[ISection]>('../../assets/testSections.json');
+    return this.fetch<[ISection]>('localhost:3000/portfolio/');
   }
 
   public getSectionBlurbs(sectionId: string): Observable<[IBlurb]> {
