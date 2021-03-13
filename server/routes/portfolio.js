@@ -7,13 +7,12 @@ var router = express.Router();
 const url = 'mongodb://localhost:27017';
 const client = new mongo(url);
 
-const options = {
-  root: path.join(`${__dirname}/../public/data/`)
-};
+// const options = {
+//   root: path.join(`${__dirname}/../public/data/`)
+// };
 
 // TODO : shoud this return all blurbs related to a section ID?
-router.get('/sections/:id', (req, res, next) => {
-  var sectionId = req.params.id;
+router.get('/sections', (req, res, next) => {
 
   client.connect((err) => {
     assert.strictEqual(null, err);
@@ -21,23 +20,19 @@ router.get('/sections/:id', (req, res, next) => {
     const db = client.db('portfolio');
     const coll = db.collection('sections');
 
-    coll.find({ id: Number(sectionId) }).toArray((err, docs) => {
-
-      res.send(docs, options, (err) => {
-        if (err) next(err);
-        else console.log(`sent docs`);
-      });
-
-    });
-
+    if (req.query.id) {
+      coll.find({ id: Number(req.query.id) }).toArray((err, docs) => res.send(docs));
+    } else {
+      coll.find({}).toArray((err, docs) => res.send(docs));
+    }
   });
 
 });
 
 // TODO : blurbs endpoint should query based on non-section related properties
-router.get('/blurbs/:sectionId', (req, res, next) => {
+router.get('/blurbs', (req, res, next) => {
 
-  var sectionId = req.params.sectionId;
+  console.log(`API: ${req.query.sectionId}`);
 
   client.connect((err) => {
     assert.strictEqual(null, err);
@@ -45,15 +40,11 @@ router.get('/blurbs/:sectionId', (req, res, next) => {
     const db = client.db('portfolio');
     const coll = db.collection('blurbs');
 
-    coll.find({ sectionId: Number(sectionId) }).toArray((err, docs) => {
-
-      res.send(docs, options, (err) => {
-        if (err) next(err);
-        else console.log(`sent docs`);
-      });
-
-    });
-
+    if (req.query.sectionId) {
+      coll.find({ sectionId: Number(req.query.sectionId) }).toArray((err, docs) => res.send(docs));
+    } else {
+      coll.find({}).toArray((err, docs) => res.send(docs));
+    }
   });
 
 });
