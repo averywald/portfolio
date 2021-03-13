@@ -11,29 +11,26 @@ const options = {
   root: path.join(`${__dirname}/../public/data/`)
 };
 
-router.get('/', (req, res, next) => {
-  var section = (req.query.section) ? req.query.section : '*';
-
-  var fileName = 'testSections.json';
+router.get('/sections/:id', (req, res, next) => {
+  var sectionId = req.params.id;
 
   client.connect((err) => {
-    assert.equal(null, err);
-    console.log('successfully connected to db');
+    assert.strictEqual(null, err);
 
     const db = client.db('portfolio');
     const coll = db.collection('sections');
-    
-    coll.find({}).toArray((err, docs) => {
-      console.log(docs);
+
+    coll.find({ id: Number(sectionId) }).toArray((err, docs) => {
+
+      res.send(docs, options, (err) => {
+        if (err) next(err);
+        else console.log(`sent docs`);
+      });
+
     });
+
   });
 
-  
-
-  res.sendFile(fileName, options, (err) => {
-    if (err) next(err);
-    else console.log(`sent ${fileName}`);
-  });
 });
 
 module.exports = router;
