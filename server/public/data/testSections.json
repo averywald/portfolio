@@ -1,16 +1,14 @@
-{
-    "sections": [
-        {
-            "id": "xxysh3",
-            "title": "experience"
-        },
-        {
-            "id": "hefwoi",
-            "title": "projects"
-        },
-        {
-            "id": "oi234i",
-            "title": "education"
-        }
-    ]
-}
+[
+    {
+        "id": 0,
+        "title": "experience"
+    },
+    {
+        "id": 1,
+        "title": "projects"
+    },
+    {
+        "id": 2,
+        "title": "education"
+    }
+]
