@@ -8,13 +8,15 @@ import { TitleHeaderComponent } from './components/title-header/title-header.com
 import { SectionContainerComponent } from './components/section-container/section-container.component';
 import { SectionBlurbComponent } from './components/section-blurb/section-blurb.component';
 import { DataService } from './services/data.service';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleHeaderComponent,
     SectionContainerComponent,
-    SectionBlurbComponent
+    SectionBlurbComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

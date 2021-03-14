@@ -1,12 +1,13 @@
 div#shell {
     display: flex;
-    margin: 2vw;
-    padding: 2vw;
+    margin: 1vw 2vw;
+    // padding: 2vw;
     outline: 5px solid black;
 
     div.wrapper {
         display: inherit;
-        padding: inherit;
+        margin: 0 1vw;
+        // padding: inherit;
 
         &#blurbWrapper {
             display: inherit;

@@ -1,0 +1,22 @@
+div.wrapper {
+    display: flex;
+    flex-direction: row;
+
+    app-sidebar {
+        overflow-y: scroll;
+        
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        top: 2vh;
+        bottom: 0;
+    }
+
+    &#content-wrapper {
+        display: inherit;
+        flex-direction: column;
+        flex-grow: 1;
+
+        margin: 1vw;
+    }
+}
