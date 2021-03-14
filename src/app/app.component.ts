@@ -15,8 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private ds: DataService) {}
 
   ngOnInit(): void {
-    this.ds.getSections().subscribe(data => this.sections = data['sections']);
-    
+    this.ds.getSections().subscribe(data => this.sections = data);
   }
   
 }

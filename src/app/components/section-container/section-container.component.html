@@ -1,10 +1,8 @@
 <div id="shell">
     <div id="titleWrapper" class="wrapper">
         <h2 id="title"> {{ title }} </h2>
-        <p> {{ id }} </p>
     </div>
     <div id="blurbWrapper" class="wrapper">
-        <!-- create component for each blurb retrieved and pass down data -->
         <app-section-blurb *ngFor="let b of blurbs;" [blurb-data]="b"></app-section-blurb>
     </div>
 </div>

@@ -27,7 +27,7 @@ export class SectionContainerComponent implements OnInit {
     this.id = this.data.id;
 
     // need to get blurbs with this.data.id
-    this.ds.getSectionBlurbs(this.id).subscribe(data => this.blurbs = data['blurbs']);
+    this.ds.getSectionBlurbs(this.id).subscribe(data => this.blurbs = data);
   }
 
 }

@@ -12,26 +12,16 @@ export class DataService {
 
   constructor(private hc: HttpClient) {}
 
-  private fetch<T>(path: string, params?: HttpParams): Observable<T> {
-    return this.hc.get(path, {params}) as Observable<T>; // return the json data
+  private fetch<T>(path: string): Observable<T> {
+    return this.hc.get(path) as Observable<T>; // return the json data
   }
 
   public getSections(): Observable<[ISection]> {
-    return this.fetch<[ISection]>('localhost:3000/portfolio/');
+    return this.fetch<[ISection]>('http://localhost:3000/portfolio/sections');
   }
 
   public getSectionBlurbs(sectionId: string): Observable<[IBlurb]> {
-
-    let p = new HttpParams();
-    p.set('sectionId', sectionId);
-
-    console.log(p.toString());
-    
-    this.fetch<[IBlurb]>('../../assets/testBlurbs.json', p).subscribe(res =>{
-      console.log(res);
-    });
-
-    return this.fetch<[IBlurb]>('../../assets/testBlurbs.json');
+    return this.fetch<[IBlurb]>(`http://localhost:3000/portfolio/blurbs?sectionId=${sectionId}`);
   }
 
 }
