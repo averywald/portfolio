@@ -1,3 +1,17 @@
-<div>
-    <p>create new {{ this.type }}</p>
+<button (click)="toggleForm()">
+    <p *ngIf="!this.isFormOpen">create new {{ this.type }}</p>
+    <p *ngIf="this.isFormOpen">cancel</p>
+</button>
+
+<div *ngIf="this.isFormOpen" id="newItemForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" [(ngModel)]="password" required>
+    </div>
+    
+    <button type="submit" (click)="login()">login</button>
 </div>
