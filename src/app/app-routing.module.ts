@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { EditorComponent } from './components/editor/editor.component';
+import { EditorComponent } from './pages/editor/editor.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { AdminGuard } from './guards/admin.guard';
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'edit',
-    component: EditorComponent,
+    component: PortfolioComponent,
     canActivate: [AdminGuard]
   }
 ];

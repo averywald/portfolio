@@ -11,7 +11,7 @@ import { DataService } from './services/data/data.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { EditorComponent } from './components/editor/editor.component';
+import { EditorComponent } from './pages/editor/editor.component';
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule } from '@angular/forms';
 

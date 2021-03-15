@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ISection } from 'src/app/models/ISection';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
+
 import { DataService } from 'src/app/services/data/data.service';
+
+import { ISection } from 'src/app/models/ISection';
 
 @Component({
   selector: 'app-portfolio',
@@ -12,10 +15,16 @@ export class PortfolioComponent implements OnInit {
   title = 'portfolio';
   sections: [ISection];
 
-  constructor(private ds: DataService) {}
+  private editorType = 'section';
+
+  constructor(private ds: DataService, private router: Router) {}
 
   ngOnInit(): void {
     this.ds.getSections().subscribe(data => this.sections = data);
+  }
+
+  loggedIn(): boolean {
+    return true; // implement
   }
 
 }

@@ -4,6 +4,12 @@
     <div class="wrapper" id="content-wrapper">
       <app-title-header></app-title-header>
   
-      <app-section-container *ngFor="let s of sections;" [section-id]="s"></app-section-container>
+      <app-section-container 
+        *ngFor="let s of sections;" 
+        [section-id]="s"
+        [logged-in]="loggedIn()">
+      </app-section-container>
+
+      <app-editor *ngIf="loggedIn()" [type]="editorType"></app-editor>
     </div>
   </div>

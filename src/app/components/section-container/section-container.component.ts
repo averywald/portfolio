@@ -12,11 +12,13 @@ import { DataService } from "../../services/data/data.service";
 export class SectionContainerComponent implements OnInit {
 
   @Input('section-id') data: ISection;
+  @Input('logged-in') editorMode: boolean;
 
   public blurbs: [IBlurb];
   public title: string;
-
   public id: string;
+
+  private editorType = 'blurb'; // subsequent editor components are to add new blurbs
 
   constructor(private ds: DataService) {}
 
