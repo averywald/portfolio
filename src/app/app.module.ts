@@ -7,8 +7,12 @@ import { AppComponent } from './app.component';
 import { TitleHeaderComponent } from './components/title-header/title-header.component';
 import { SectionContainerComponent } from './components/section-container/section-container.component';
 import { SectionBlurbComponent } from './components/section-blurb/section-blurb.component';
-import { DataService } from './services/data.service';
+import { DataService } from './services/data/data.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { EditorComponent } from './components/editor/editor.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,17 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     TitleHeaderComponent,
     SectionContainerComponent,
     SectionBlurbComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent,
+    PortfolioComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

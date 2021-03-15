@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 
-import { IBlurb } from '../models/IBlurb';
-import { ISection } from "../models/ISection";
+import { IBlurb } from '../../models/IBlurb';
+import { ISection } from "../../models/ISection";
 
 @Injectable({
   providedIn: 'root'

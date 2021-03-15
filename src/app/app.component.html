@@ -1,15 +1,1 @@
-<nav>
-  <!-- some other stuff can go here -->
-</nav>
-
-<div class="wrapper" id="outer-wrapper">
-  <app-sidebar [sections]="sections"></app-sidebar>
-  
-  <div class="wrapper" id="content-wrapper">
-    <app-title-header></app-title-header>
-
-    <app-section-container *ngFor="let s of sections;" [section-id]="s"></app-section-container>
-  </div>
-</div>
-
 <router-outlet></router-outlet> 

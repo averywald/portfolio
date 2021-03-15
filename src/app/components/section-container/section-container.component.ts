@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IBlurb } from 'src/app/models/IBlurb';
 import { ISection } from 'src/app/models/ISection';
 
-import { DataService } from "../../services/data.service";
+import { DataService } from "../../services/data/data.service";
 
 @Component({
   selector: 'app-section-container',
@@ -26,7 +26,6 @@ export class SectionContainerComponent implements OnInit {
     this.title = this.data.title;
     this.id = this.data.id;
 
-    // need to get blurbs with this.data.id
     this.ds.getSectionBlurbs(this.id).subscribe(data => this.blurbs = data);
   }
 
