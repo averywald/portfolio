@@ -14,12 +14,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    canActivate: [AdminGuard]
+    component: LoginComponent
   },
   {
     path: 'edit',
-    component: EditorComponent
+    component: EditorComponent,
+    canActivate: [AdminGuard]
   }
 ];
 

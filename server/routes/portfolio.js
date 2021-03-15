@@ -41,4 +41,22 @@ router.get('/blurbs', (req, res, next) => {
 
 });
 
+router.get('/admins', (req, res, next) => {
+
+  client.connect((err) => {
+    assert.strictEqual(null, err);
+
+    const db = client.db('portfolio');
+    const coll = db.collection('admins');
+
+    if (req.query.u && req.query.p) {
+      coll.find({ username: req.query.u, password: req.query.p }).toArray((err, docs) => {
+        if (docs.length > 0) res.send({ status: 200 });
+        else res.send({ status: 404 });
+      });
+    }
+  });
+
+});
+
 module.exports = router;

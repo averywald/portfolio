@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { CookieService } from 'ngx-cookie-service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CookieService } from 'ngx-cookie-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [DataService, CookieService],

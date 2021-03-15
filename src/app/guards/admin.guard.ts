@@ -1,37 +1,28 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service'; 
+import { IAdmin } from '../models/IAdmin';
+import { DataService } from '../services/data/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
 
-  constructor(private permissions: Permissions) {}
+  constructor(private dataService: DataService,
+    private cookieService: CookieService) {}
 
-  canActivate(): boolean {
-    this.permissions.canActivate();
-    return true;
+  async canActivate(): Promise<boolean> {
+    var cookies: IAdmin = {
+      username: this.cookieService.get('username'),
+      password: this.cookieService.get('password')
+    };
+
+    var resp = await this.dataService.queryAdmins(cookies).toPromise();
+
+    return (resp['status'] == 200) ? true : false;
   }
   
-}
-
-@Injectable({
-  providedIn: 'root'
-})
-export class Permissions {
-
-  private cookies: object;
-
-  constructor(private cookieService: CookieService) {
-    this.cookies = this.cookieService.getAll();
-  }
-
-  canActivate(user?: UserToken, id?: string): boolean {
-    console.log();
-    return true;
-  }
-
 }
 
 export class UserToken {
