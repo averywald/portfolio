@@ -1,27 +1,19 @@
-# Portfolio
+## This is the code for my digital portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+### The app is designed to present resume information in a clean, modular UI
+### and be easy to update and manage
 
-## Development server
+It's an angular web app backed by the rest of a MEAN stack
+and it currently contains the
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1. angular codebase
+- use `npm` to install the app's dependencies with `npm i`
+- the angular web app can be started with `ng serve`
+    
+### 2. express nodejs server codebase
+- this serves the API, and can be started by
+    1. navigate to `server/` with `cd server/`
+    2. this is the API server's directory, which has dependencies that need to be installed in it. Run `npm i` to get those.
+    3. now you can execute the server with node. there are 2 run modes available: 
+        - production : `npm start`
+        - live development : `npm test`
