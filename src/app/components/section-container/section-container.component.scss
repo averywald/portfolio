@@ -1,17 +1,34 @@
 div#shell {
     display: flex;
-    margin: 1vw 2vw;
-    // padding: 2vw;
-    outline: 5px solid black;
+    margin: .25vh;
+    padding: 2vw;
+    background-color: rgb(236, 236, 236);
 
     div.wrapper {
         display: inherit;
         margin: 0 1vw;
-        // padding: inherit;
+
+        &#titleWrapper {
+            display: inherit;
+            justify-content: flex-end;
+            align-items: initial;
+            width: 12vw;
+        }
 
         &#blurbWrapper {
             display: inherit;
             flex-direction: column; // make blurb items flow vertically
+            flex-grow: 2; // make div fill the middle of the section container
+            padding-left: 2vw;
+        }
+
+        &#editorWrapper {
+            display: inherit;
+            justify-content: end;
         }
     }
+}
+
+h2 {
+    font-size: 2.5vw;        
 }

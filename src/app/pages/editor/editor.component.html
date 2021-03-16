@@ -1,18 +1,18 @@
-<button (click)="toggleForm()">
-    <p *ngIf="!this.isFormOpen">create new {{ this.type }}</p>
-    <p *ngIf="this.isFormOpen">cancel</p>
-</button>
-
-<div *ngIf="this.isFormOpen" id="newItemForm">
-    <div class="form-group">
-        <label for="itemTitle">Title</label>
-        <input type="text" [(ngModel)]="itemTitle" required>
-    </div>
-
-    <div *ngIf="this.type == 'blurb'" class="form-group">
-        <label for="itemContent">Content</label>
-        <input type="text" [(ngModel)]="itemContent" required>
-    </div>
+<div id="shell">
+    <button (click)="toggleForm()">
+        <p *ngIf="!this.isFormOpen">create new {{ this.type }}</p>
+        <p *ngIf="this.isFormOpen">cancel</p>
+    </button>
     
-    <button type="submit" (click)="createNew()">login</button>
+    <div *ngIf="this.isFormOpen" id="newItemForm">
+        <div class="form-group">
+            <input type="text" [(ngModel)]="itemTitle" placeholder="title" required>
+        </div>
+    
+        <div *ngIf="this.type == 'blurb'" class="form-group">
+            <input type="text" [(ngModel)]="itemContent" placeholder="content" required>
+        </div>
+    
+        <button type="submit" (click)="createNew()">add</button>
+    </div>
 </div>

@@ -5,7 +5,7 @@
     <div id="blurbWrapper" class="wrapper">
         <app-section-blurb *ngFor="let b of blurbs;" [blurb-data]="b"></app-section-blurb>
     </div>
-    <div *ngIf="this.editorMode" id="newBlurbWrapper" class="wrapper">
+    <div *ngIf="this.editorMode" id="editorWrapper" class="wrapper">
         <app-editor [type]="editorType"></app-editor>
     </div>
 </div>
