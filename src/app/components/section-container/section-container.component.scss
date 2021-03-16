@@ -1,18 +1,25 @@
 div#shell {
     display: flex;
-    margin: .25vh;
+    margin: .25vh 10vw 2vh .25vh;
     padding: 2vw;
     background-color: rgb(236, 236, 236);
+    border-left: .5vw solid grey;
+    box-shadow:  0 0 3vw lightgrey;
 
     div.wrapper {
         display: inherit;
         margin: 0 1vw;
+
+        h2 {
+            font-weight: normal;
+        }
 
         &#titleWrapper {
             display: inherit;
             justify-content: flex-end;
             align-items: initial;
             width: 12vw;
+            color: #3d6a94;
         }
 
         &#blurbWrapper {

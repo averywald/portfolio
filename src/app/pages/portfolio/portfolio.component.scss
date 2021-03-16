@@ -3,14 +3,6 @@ div.wrapper {
     flex-direction: row;
     bottom: 0;
 
-    app-sidebar {
-        overflow-y: scroll;
-        direction: rtl;
-        
-        display: flex;
-        flex-direction: column;
-    }
-
     &#content-wrapper {
         display: inherit;
         flex-direction: column;
